@@ -24,46 +24,11 @@
     <link rel="icon" href="/images/ui/favicon.ico" type="image/png">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.1/dist/instantsearch.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.1/dist/instantsearch.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.1/dist/instantsearch-theme-algolia.min.css">
-
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-
-        var search = instantsearch({
-            appId: 'TXUI53WBEH',
-            apiKey: 'abdf284bf870bdd1beff87179eadcb07',
-            indexName: 'help-new',
-            urlSync: true
-        });
-
-        // initialize SearchBox
-        search.addWidget(
-            instantsearch.widgets.searchBox({
-                container: '#js_search_box',
-                placeholder: 'Search Documentation'
-            })
-        );
-
-        // initialize hits widget
-        {% raw %}
-           search.addWidget(
-            instantsearch.widgets.hits({
-              container: '#js_hits',
-              templates: {
-                empty: 'No results',
-                item: '<h6><a href="{{{ url }}}">{{{ title }}}</a></h6> \n{{{ raw_html }}}\n\n'
-              }
-            })
-          );
-        {%endraw%}
-
-        search.start();
-  });
-</script>
-
+    <!-- lunr search -->
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="/js/lunr.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/search.js"></script>
 
     {% include styles.html %}
 </head>
@@ -78,6 +43,7 @@
         {% include top_nav_bar.html %}
 
         <!-- =============== Main  =============== -->
+        
             <main id="main" class="Main Main--fixSidebar">
 
                 <!-- The left sidebar -->
