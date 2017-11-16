@@ -17,6 +17,7 @@ $ cx tunnel -s <stack> --server <server name>|<server ip>|<server role> --remote
 At least one of the optional server parameters are necessary in order to identify which server to run the command on.
 
 Also, you need to specify at least the `remote` port. If `local` is missing, `remote + 1` will be used as `local`. For example, `--remote 3306` without `local` will use `3307` as `local`.
+
 |		Parameter 		   |	Default		|   Description    |
 |--------------------------|:--------------:| ----------------:|
 |stack 					   |		—		| Name of the stack|

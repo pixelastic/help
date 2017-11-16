@@ -13,6 +13,7 @@ $ cx lease [-s <stack>] [-f <from IP>] [-t <time to open>] [-p <port>]
 
 
 ### Parameters
+
 |		Parameter 		   |	Default		|   Description    |
 |--------------------------|:--------------:| ----------------:|
 |stack 					   |		—		|Name of the stack|

@@ -40,10 +40,8 @@ Build a new Docker stack based on your desired service definition.
 $ cx --org <organization_name> stacks create --name <stack_name> --environment <environment> --service_yaml <service_yaml_path> [--manifest_yaml <manifest_yaml_path>]
 ```
 
-
-
-
 ### Parameters
+
 |		Parameter 		   	|   Description    |
 |---------------------------| ----------------:|
 |organization_name		   	|Name of the organization -you can find it by using cx info-|
@@ -80,6 +78,7 @@ $ cx stacks redeploy [-s <stack>] [-y] [--git-ref <git_ref>] [--service <service
 
 
 ### Parameters
+
 |		Parameter 		   	|   Description    |
 |---------------------------| ----------------:|
 |stack 					   	| Name of your stack |
@@ -123,6 +122,7 @@ $ cx stacks restart [-s <stack>]
 
 
 ### Parameters
+
 |		Parameter 		   	|   Description    |
 |---------------------------| ----------------:|
 |stack 					   	| Name of your stack |
@@ -151,6 +151,7 @@ $ cx stacks reboot -s <stack> [--group <server group name>] [--strategy <strateg
 
 
 ### Parameters
+
 |		Parameter 		   	|     Description    |
 |---------------------------| ------------------:|
 |stack 					   	| Name of your stack |
@@ -158,9 +159,10 @@ $ cx stacks reboot -s <stack> [--group <server group name>] [--strategy <strateg
 |group (default web)		 	 			   	| Group of servers you wish to reboot (all, web, haproxy, db, mysql, redis, postgresql, mongodb) |
 |strategy		  	   	| Reboot in serial or parallel |
 |e (environment) (optional)		 | 	Full or partial environment name |
-The group parameter specifies which group of servers you wish to reboot. Valid values are “all”, “web”, “haproxy”, “db”; DB specific values like “mysql” or “redis” for example are also supported. If this value is left unspecified, the default value of “web” will be used
 
-The strategy parameter specifies whether you want all your servers to be rebooted in parallel or in serial. Valid values for this parameter are “serial” or “parallel”; “serial” reboots involves web servers being removed/re-added to the LB one by one. Note that for this only applies to web servers; non-web server will still be rebooted in parallel. If this value is left unspecified, Cloud 66 will determine the best strategy based on your infrastructure layout.
+The group parameter specifies which group of servers you wish to reboot. Valid values are "all", "web", "haproxy", "db"; DB specific values like "mysql" or "redis" for example are also supported. If this value is left unspecified, the default value of "web" will be used
+
+The strategy parameter specifies whether you want all your servers to be rebooted in parallel or in serial. Valid values for this parameter are "serial" or "parallel"; "serial" reboots involves web servers being removed/re-added to the LB one by one. Note that for this only applies to web servers; non-web server will still be rebooted in parallel. If this value is left unspecified, Cloud 66 will determine the best strategy based on your infrastructure layout.
 
 ### Example
 
@@ -176,7 +178,9 @@ $ cx stack reboot -s mystack --group web --strategy serial
 
 ## Clear caches
 
-For improved performance, volatile code caches exist for your stack. It is possible for a those volatile caches to become invalid if you switch branches, change git repository URL, or rebase or force a commit. Since switching branch or changing git repository URL is done via the Cloud 66 interface, your volatile caches will automatically be purged. However, rebasing or forcing a commit doesn't have any association with Cloud 66, so this command can be used to purge the exising volatile caches.
+For improved performance, volatile code caches exist for your stack. It is possible for a those volatile caches to become invalid if you switch branches, change git repository URL, or rebase or force a commit. 
+
+Since switching branch or changing git repository URL is done via the Cloud 66 interface, your volatile caches will automatically be purged. However, rebasing or forcing a commit doesn't have any association with Cloud 66, so this command can be used to purge the exising volatile caches.
 
 
 ### Usage
@@ -184,8 +188,6 @@ For improved performance, volatile code caches exist for your stack. It is possi
 ```
 $ cx stacks clear-caches [-s <stack>]
 ```
-
-
 
 
 ### Parameters
@@ -248,6 +250,7 @@ $ cx stacks configure list [-s <stack>]
 
 
 ### Parameters
+
 |		Parameter 		   	|   Description    |
 |---------------------------| ----------------:|
 |list 					   	|List of all versions of a configuration file|
