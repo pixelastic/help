@@ -35,9 +35,6 @@ sass:
 
 safe: false
 
-plugins:
-  - algoliasearch-jekyll
-
 algolia:
   application_id: 'TXUI53WBEH'
   index_name:     'help'
